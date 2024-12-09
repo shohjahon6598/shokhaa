@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Timer</title>
+    <link rel="stylesheet" href="birthday.css">
+</head>
+<body>
+
+    <h1>Time Left until Shohjahon's birthday </h1>
+    <div id="timer">Sabr qilib turing...</div>
+
+    <button onclick="changeBackground()">Bosgin rasm o'zgaradi</button>
+
+    <script>
+        // Timer JavaScript code
+        function updateTimer() {
+            const birthday = new Date("January 28, 2025 00:00:00"); // Set your birthday date
+            const now = new Date();
+            const timeDifference = birthday - now; // Time difference in milliseconds
+
+            console.log("Now: " + now);
+            console.log("Birthday: " + birthday);
+            console.log("Time Difference: " + timeDifference);
+
+            // If the time difference is negative, the countdown is over
+            if (timeDifference < 0) {
+                document.getElementById("timer").innerHTML = "Happy Birthday!";
+                clearInterval(timerInterval); // Stop the timer
+                return;
+            }
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Display the timer
+            document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        // Update the timer every second
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        // Background image changing JavaScript code
+        let currentImage = 0; // Keep track of the current image index
+        const images = [
+            'shokhaa.jpg', // Image 1
+            'jumayev.jpg', // Image 2
+            'hehe.jpg'  // Image 3
+            
+        ];
+
+        // Function to change the background image
+        function changeBackground() {
+            currentImage = (currentImage + 1) % images.length; // Cycle through images
+            document.body.style.backgroundImage = `url(${images[currentImage]})`; // Set the background
+        }
+
+        // Initial background setup
+        document.body.style.backgroundImage = `url(${images[currentImage]})`; // Set the initial background
+    </script>
+
+</body>
+</html>

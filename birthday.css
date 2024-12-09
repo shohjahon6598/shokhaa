@@ -1,0 +1,39 @@
+body {
+    background-image: url('images/background1.jpg'); /* Your image path */
+    background-size: 500px 500px; /* Set the background image size to 500px width and height */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+}
+/* Timer styling */
+#timer {
+    font-size: 50px;
+    color: black; /* Make sure the text is visible */
+    background-color: rgba(0, 0, 0, 0); /* Add a background color to help visibility */
+    padding: 20px;
+    border-radius: 10px; /* Optional: Rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: Adds shadow for better readability */
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+h1 {text-align:center;
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    padding: 20px; /* Add some padding to make the background color visible */
+    border-radius: 10px; /* Optional: Rounded corners */
+    font-size: 36px; /* Adjust font size */
+    color: white; /* Ensure the text is visible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: Add shadow to the text */
+}
